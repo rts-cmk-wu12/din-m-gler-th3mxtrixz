@@ -1,12 +1,12 @@
 import Image from "next/image";
 import paperPlane from "../../public/images/paper-plane.png"
 import phone from "../../public/images/phone.png"
-import user from "../../public/images/user.png"
+import user from "../../public/svg/user.svg"
 import icon from "../../public/images/din-maegler.png"
 
 export default function Header() {
     return (
-        <header className="sticky top-0">
+        <header className="sticky top-0 z-[1000]">
             <div className="bg-[#162A41] flex items-center justify-around text-white h-[3.8rem]">
             <address className="flex">
                 <div className="flex mr-[1rem]">
@@ -20,16 +20,16 @@ export default function Header() {
                 </address>
                 <div className="flex">
                     <Image src={user} width={25} height={25} alt="user" className="mr-[0.5rem]"/>
-                    <span className="hover:text-orange-400">Log ind</span>
+                    <span className="hover:text-orange-400 text-[1.1rem]">Log ind</span>
                 </div>
             </div>
             <div className="h-[5rem] flex justify-around items-center px-[9.3rem] bg-white">
                 <Image src={icon} width={260} alt="website icon"/>
                 <nav className="flex">
-                    <a className="mr-8 hover:text-orange-400">Boliger til salg</a>
-                    <a className="mr-8 hover:text-orange-400">Mæglere</a>
-                    <a className="mr-8 hover:text-orange-400">Mine favoritter</a>
-                    <a className="hover:text-orange-400">Kotankt os</a>
+                    <a className="mr-8 hover:text-orange-400 text-[1.1rem]">Boliger til salg</a>
+                    <a className="mr-8 hover:text-orange-400 text-[1.1rem]">Mæglere</a>
+                    <a className="mr-8 hover:text-orange-400 text-[1.1rem]">Mine favoritter</a>
+                    <a className="hover:text-orange-400 text-[1.1rem]">Kotankt os</a>
                 </nav>
             </div>
         </header>
