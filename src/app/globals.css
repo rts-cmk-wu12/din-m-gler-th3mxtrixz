@@ -18,3 +18,7 @@
     background-size: cover;
     height: 53rem;
 }
+
+address {
+    font-style: normal;
+}
