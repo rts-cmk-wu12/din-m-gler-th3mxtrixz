@@ -19,6 +19,41 @@
     height: 53rem;
 }
 
+.newsletter {
+    background-image: url("/images/newsletter.png");
+    height: 15rem;
+    background-position: center;
+    background-size: cover;
+}
+
 address {
     font-style: normal;
+}
+
+.A {
+    background-color: #108f09;
+}
+
+.B {
+    background-color: #7FC417;
+}
+
+.C {
+    background-color: #FCEE21;
+}
+
+.D {
+    background-color: #FBB03C;
+}
+
+.E {
+    background-color: #F15A24;
+}
+
+.F {
+    background-color: #FE1212;
+}
+
+.G {
+    background-color: #BD0405;
 }

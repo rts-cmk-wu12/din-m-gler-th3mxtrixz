@@ -16,8 +16,8 @@ export default function LandingPage() {
                     <form className="mt-[1.2rem] flex flex-col">
                         <label className="text-black mt-[0.7rem] text-[1.1rem]">Hvad skal din næste bolig indeholde?
                         <div className="flex items-center w-[100%]">
-                            <input type="text" className="p-[0.5rem] border-[#F3F1F1] border-2 py-[0.8rem] w-[90%] mr-[0.5rem]" placeholder="Søg på fx. glaskeramisk komfur, bryggers, kælder eller lignende"/>
-                            <button className="px-[2.5rem] py-[0.9rem] bg-[#162A41] text-white rounded-[3px] hover:text-orange-400">Søg</button>
+                            <input type="text" className="p-[0.5rem] border-[#F3F1F1] border-[1.5px] py-[0.8rem] w-[90%] mr-[0.5rem]" placeholder="Søg på fx. glaskeramisk komfur, bryggers, kælder eller lignende"/>
+                            <button className="px-[2.5rem] py-[0.9rem] bg-[#162A41] text-white rounded-[3px]">Søg</button>
                         </div>
                         </label>
                     </form>

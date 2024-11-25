@@ -7,7 +7,7 @@ import address from "../../public/images/address.png"
 export default function Footer() {
     return (
         <footer className="w-[100%]">
-            <div className="bg-[#F8F8FB] px-[20%] py-[4rem] z-[100] relative">
+            <div className="bg-[#F8F8FB] px-[20%] py-[5rem] z-[100] relative">
                     <Image src={dinMaegler} width={290} alt="din mægler icon"/>
                     <p className="mt-[1rem] text-[1.1rem]">There are many variations of passages of Lorem Ipsum available, but the majority have<br/> suffered alteration in some form, by injected humour, or randomized words.</p>
                 <section className="w-[100%] flex z-[100] relative">
