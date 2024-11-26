@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link"
 import { useEffect, useState } from "react"
 
 export default function Houses() {
@@ -18,7 +19,7 @@ export default function Houses() {
 
     
     return (
-        <main className="bg-[#F8F8FB] pb-[5rem]">
+        <section className="bg-[#F8F8FB] pb-[5rem]">
             <div className="flex flex-col justify-center items-center text-center">
             <h1 className="text-[#263048] text-[2.5rem] font-bold mt-[5rem]">Udvalgte Boliger</h1>
             <p className="mt-[1rem] text-[1.1rem]">There are many variations of passages of Lorem Ipsum available but the this in<br/> majority have suffered alteration in some</p>
@@ -46,8 +47,8 @@ export default function Houses() {
                 ))}
             </div>
                 <div className="flex justify-center mt-[4rem]">
-                    <button className="bg-[#162A41] text-white py-[1rem] px-[1.8rem] hover:text-orange-400">Se alle boliger</button>
+                    <Link href="HousesForSale" className="bg-[#162A41] text-white py-[1rem] px-[1.8rem] hover:text-orange-400">Se alle boliger</Link>
                 </div>
-        </main>
+        </section>
     )
 }

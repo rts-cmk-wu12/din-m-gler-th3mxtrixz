@@ -1,5 +1,6 @@
 import Image from "next/image"
-import mail from "../../public/images/mail.png"
+import mail from "../../../public/images/mail.png"
+import Link from "next/link"
 
 export default async function MeetAgents() {
     const meetAgents = await fetch(`https://dinmaegler.onrender.com/agents?_limit=3`)
@@ -28,7 +29,7 @@ export default async function MeetAgents() {
                 ))}
             </div>
                 <div className="flex justify-center mt-[4rem]">
-                    <button className="bg-[#162A41] text-white py-[1rem] px-[1.8rem] hover:text-orange-400">Se alle mæglere</button>
+                    <Link href="/AllAgents" className="bg-[#162A41] text-white py-[1rem] px-[1.8rem] hover:text-orange-400">Se alle mæglere</Link>
                 </div>
         </main>
     )

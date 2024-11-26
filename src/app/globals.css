@@ -26,6 +26,20 @@
     background-size: cover;
 }
 
+.banner {
+    background-image: url("/images/banner.png");
+    height: 15rem;
+    background-position: center;
+    background-size: cover;
+}
+
+.banner2 {
+    background-image: url("/images/banner.png");
+    height: 10rem;
+    background-position: center;
+    background-size: cover;
+}
+
 address {
     font-style: normal;
 }

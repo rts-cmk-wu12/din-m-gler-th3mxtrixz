@@ -1,10 +1,16 @@
+"use client"
+
 import Image from "next/image"
 import dinMaegler from "../../public/images/din-maegler.png"
 import callUsPhone from "../../public/images/call-us-phone.png"
 import sendEmail from "../../public/images/send-email.png"
 import address from "../../public/images/address.png"
+import { usePathname } from "next/navigation"
+import Link from "next/link"
 
 export default function Footer() {
+    const pathName = usePathname()
+
     return (
         <footer className="w-[100%]">
             <div className="bg-[#F8F8FB] px-[20%] py-[5rem] z-[100] relative">
@@ -35,12 +41,12 @@ export default function Footer() {
                     </div>
                         <p className="py-[1.5rem] text-[1.1rem]">Din Mægler Roskilde, er din<br/> boligbutik i lokalområdet.</p>
                     </address>
-                    <nav className="w-[50%] flex flex-col mt-[2.5rem] ml-[10%]">
-                        <ul>
+                    <nav className="w-[50%] mt-[2.5rem] ml-[10%]">
+                        <ul className="flex flex-col">
                             <li className="font-bold text-[1.5rem]">Quick Links</li>
-                            <li className="py-[1rem] text-[1.1rem] hover:text-orange-400">Boliger til salg</li>
-                            <li className="text-[1.1rem] hover:text-orange-400">Mæglere</li>
-                            <li className="py-[1rem] text-[1.1rem] hover:text-orange-400">Kontakt os</li>
+                            <Link href="/HousesForSale" className={` ${pathName === "/HousesForSale" ? "text-orange-400" : "black"} my-[1rem] hover:text-orange-400 text-[1.1rem]`}>Boliger til salg</Link>
+                            <Link href="/AllAgents" className={` ${pathName === "/AlleAgents" ? "text-orange-400" : "black"} hover:text-orange-400 text-[1.1rem]`}>Mæglere</Link>
+                            <li className="text-[1.1rem] hover:text-orange-400 my-[1rem]">Kontakt os</li>
                             <li className="text-[1.1rem] hover:text-orange-400">Log in / bliv bruger</li>
                         </ul>
                     </nav>
