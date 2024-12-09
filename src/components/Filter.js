@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 export default function Filter() {
-    const [price, setPrice] = useState(0)
+    const [price, setPrice] = useState(12000000)
 
     function handlePriceSlider(event) {
         setPrice(event.target.value)
@@ -24,7 +24,7 @@ export default function Filter() {
                     </div>
                     <div className="ml-[2rem] w-[30%]">
                         <label className="text-[#333333] block">Pris-interval</label>
-                        <input type="range" min="0" max="12000000" value={price} onChange={handlePriceSlider} className="w-full appearance-none h-1 bg-[#D3DEE8] rounded-sm"/>
+                        <input type="range" min="0" max="12000000" value={price} onChange={handlePriceSlider} className="w-full appearance-none h-[0.2px] bg-[#D3DEE8] rounded-sm"/>
                         <div className="flex justify-between mt-1 text-sm text-[#7B7B7B]">
                             <span>0 kr.</span>
                             <span>12.000.000 kr.</span>

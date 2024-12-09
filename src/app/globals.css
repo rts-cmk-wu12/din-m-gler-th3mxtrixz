@@ -71,3 +71,13 @@ address {
 .G {
     background-color: #BD0405;
 }
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: #C4C4C4;
+    margin-top: -5px;
+}

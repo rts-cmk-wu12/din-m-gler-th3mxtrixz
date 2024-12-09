@@ -1,5 +1,6 @@
 import Image from "next/image"
 import mail from "../../../public/images/mail.png"
+import Link from "next/link"
 
 export default async function AllAgents() {
     const meetAgents = await fetch(`https://dinmaegler.onrender.com/agents`)
@@ -12,9 +13,10 @@ export default async function AllAgents() {
             <div className="banner2 flex justify-center items-center">
                 <h2 className="text-white text-[3rem] font-bold">Medarbejder i Roskilde</h2>
             </div>
-            <div className="flex justify-center">
-            <div className="grid grid-cols-3 grid-rows-2 gap-[3rem] my-[8rem]">
+            <div className="flex justify-center my-[8rem]">
+            <div className="grid grid-cols-3 grid-rows-2 gap-[3rem]">
                 {data.map((data, index) => (
+                    <Link key={index} href={`/AllAgents/${data.id}`} className="">
                     <div key={index} className="shadow-lg bg-white rounded-[5px]">
                     <img className="w-[22rem] h-[23rem] object-cover rounded-t-[5px]" src={data.image.url}/>
                     <div className="flex justify-center items-center flex-col rounded-b-[10px] py-[1.5rem]">
@@ -26,9 +28,10 @@ export default async function AllAgents() {
                         </div>
                     </div>
                     </div>
+                </Link>
                 ))}
-                </div>
             </div>
+                </div>
         </section>
     )
 }

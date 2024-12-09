@@ -32,7 +32,7 @@ export default function Houses() {
                             <address className="font-semibold text-[1.3rem]">{homes.adress1}{homes.adress2 ? " •" : ""} {homes.adress2 ? homes.adress2 : ""}</address>
                             <address className="mt-2">{homes.postalcode} {homes.city}</address>
                             <address className="mt-2">
-                                <span className="font-bold">{homes.type}</span> • Ejerudgift: {homes.gross} kr.
+                                <span className="font-bold">{homes.type}</span> • Ejerudgift: {homes.cost} kr.
                             </address>
                             <div className="border-t border-gray-300 mt-[1.2rem]"></div>
                             <div className="flex justify-between items-center mt-[1rem]">
