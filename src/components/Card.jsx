@@ -20,7 +20,7 @@ export default function Card({homes, index, token, savedFavorite}) {
                                 <span className="ml-[0.5rem]">{homes.rooms} værelser • {homes.livingspace} m²</span>
                                 <div className="flex justify-end ml-auto">
                                 <span className="font-semibold text-[1.3rem]">Kr. {homes.payment.toLocaleString()}</span>
-                                </div>
+                            </div>
                         </div>
                 </div>
         </div>

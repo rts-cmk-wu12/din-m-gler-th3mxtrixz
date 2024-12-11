@@ -1,3 +1,5 @@
+
+import FavoriteCard from "@/components/FavoriteCard"
 import { cookies } from "next/headers"
 
 export default async function Favorite() {
@@ -17,7 +19,6 @@ const getFavorites = await fetch("https://dinmaegler.onrender.com/users/me", {
     console.log("property details", savedFavorite.homes)
 
 
-
     const getProperties = await fetch(`https://dinmaegler.onrender.com/homes`);
 
     const data = await getProperties.json()
@@ -35,6 +36,11 @@ const getFavorites = await fetch("https://dinmaegler.onrender.com/users/me", {
         <main>
             <div className="banner2 flex justify-center items-center">
                 <h2 className="text-white text-[3rem] font-bold">Mine favoritboliger</h2>
+            </div>
+            <div className="flex flex-col items-center justify-center">
+                {filteredHomes.map((items) => (
+                    <FavoriteCard key={items.id} items={items} />
+                ))}
             </div>
         </main>
     )
