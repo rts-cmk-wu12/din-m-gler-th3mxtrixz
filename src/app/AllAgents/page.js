@@ -16,7 +16,7 @@ export default async function AllAgents() {
             <div className="flex justify-center my-[8rem]">
             <div className="grid grid-cols-3 grid-rows-2 gap-[3rem]">
                 {data.map((data, index) => (
-                    <Link key={index} href={`/AllAgents/${data.id}`} className="">
+                    <Link key={index} href={`/AllAgents/${data.id}`}>
                     <div key={index} className="shadow-lg bg-white rounded-[5px]">
                     <img className="w-[22rem] h-[23rem] object-cover rounded-t-[5px]" src={data.image.url}/>
                     <div className="flex justify-center items-center flex-col rounded-b-[10px] py-[1.5rem]">

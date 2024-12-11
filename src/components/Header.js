@@ -6,10 +6,26 @@ import phone from "../../public/images/phone.png"
 import user from "../../public/svg/user.svg"
 import icon from "../../public/images/din-maegler.png"
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { redirect, usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
+import { deleteCookie, getCookie } from "cookies-next";
 
 export default function Header() {
     const pathName = usePathname()
+    const [isLoggedIn, setIsLoggedIn] = useState()
+
+    useEffect(() => {
+        const loggedIn = getCookie("dm_userid")
+        setIsLoggedIn(loggedIn)
+    },[pathName])
+
+    function handleLogOut(){
+        if (isLoggedIn) {
+            deleteCookie("dm_token")
+            deleteCookie("dm_userid")
+            redirect("/LogIn")
+        }
+    }
 
     return (
         <header className="sticky top-0 z-[1000]">
@@ -24,10 +40,14 @@ export default function Header() {
                         <a className="hover:text-orange-400" href="tel:+4570704000">+45 7070 4000</a>
                         </div>
                 </address>
-                <Link href="/LogIn" className="flex">
-                    <Image src={user} width={25} height={25} alt="user" className="mr-[0.5rem]"/>
-                    <span className={` ${pathName === "/LogIn" ? "text-orange-400" : "black"} text-[1.1rem] hover:text-orange-400`}>Log ind</span>
-                </Link>
+                <div className="flex hover:text-orange-400">
+                    <Image height={24} width={24} alt="log in" className="mr-2" src={user}/>
+                    {isLoggedIn ? <button onClick={handleLogOut}>Log ud</button> 
+                    : 
+                    <Link href="/LogIn" className={`${pathName === "/Login" ? "text-orange-400" 
+                    : 
+                    "black"}`}>Log ind</Link>}
+                </div>
             </div>
             <div className="h-[5rem] flex justify-around items-center px-[9.3rem] bg-white">
                 <Link href="/">
@@ -36,7 +56,7 @@ export default function Header() {
                 <nav className="flex">
                     <Link href="/HousesForSale" className={` ${pathName === "/HousesForSale" ? "text-orange-400" : "black"} mr-8 hover:text-orange-400 text-[1.1rem]`}>Boliger til salg</Link>
                     <Link href="/AllAgents" className={` ${pathName === "/AllAgents" ? "text-orange-400" : "black"} mr-8 hover:text-orange-400 text-[1.1rem]`}>Mæglere</Link>
-                    <a className="mr-8 hover:text-orange-400 text-[1.1rem]">Mine favoritter</a>
+                    <Link href="/Favorite" className={` ${pathName === "/Favorite" ? "text-orange-400" : "black"} mr-8 hover:text-orange-400 text-[1.1rem]`}>Mine favoritter</Link>
                     <a className="hover:text-orange-400 text-[1.1rem]">Kotankt os</a>
                 </nav>
             </div>

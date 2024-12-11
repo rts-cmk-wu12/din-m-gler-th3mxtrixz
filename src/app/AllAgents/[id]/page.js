@@ -22,7 +22,7 @@ export default async function AgentInfo({params}) {
                 <div className="flex flex-col md:flex-row gap-[2rem]">
             <article className="grid grid-cols-2 border-[#D3DEE8] border-[1.95px] p-[1.5rem] w-[70%]">
                 <img className="w-[19rem] h-[19rem] object-cover" src={data.image.url}/>
-                <div className="bg-[#162A41] h-[5%] w-[8%] flex flex row p-[0.6rem] absolute bottom-[16rem]">
+                <div className="bg-[#162A41] h-[5%] w-[8%] flex flex-row p-[0.6rem] absolute bottom-[16rem]">
                     <Image className="w-[25rem]" src={instagram} height={20} width={20} alt="agents social medias"/>
                     <Image className="w-[25rem]" src={linkedin} height={20} width={20} alt="agents social medias"/>
                     <Image className="w-[25rem]" src={skype} height={20} width={20} alt="agents social medias"/>

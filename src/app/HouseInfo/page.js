@@ -26,26 +26,28 @@ export default function Houses() {
             </div>
             <div className="grid grid-cols-2 grid-rows-2 gap-[2rem] place-items-center px-[25rem] mt-[4rem]">
                 {homes.map((homes, index) => (
-                    <div key={index} className="bg-white h-[29rem] rounded-b-[3px]">
+                    <Link key={index} href={`/HouseInfo/${homes.id}`}>
+                    <div className="bg-white h-[29rem] rounded-b-[3px]">
                         <img className="h-[16rem] w-[40rem] rounded-t-[3px]" src={homes.images[0].url}/>
                         <div className="p-[1rem]">
                             <address className="font-semibold text-[1.3rem]">{homes.adress1}{homes.adress2 ? " •" : ""} {homes.adress2 ? homes.adress2 : ""}</address>
                             <address className="mt-2">{homes.postalcode} {homes.city}</address>
                             <address className="mt-2">
-                                <span className="font-bold">{homes.type}</span> • Ejerudgift: {homes.cost} kr.
+                                <span className="font-bold">{homes.type}</span> • Ejerudgift: {homes.cost.toLocaleString()} kr.
                             </address>
                             <div className="border-t border-gray-300 mt-[1.2rem]"></div>
                             <div className="flex justify-between items-center mt-[1rem]">
                                 <span className={`font-bold text-[1.5rem] px-[0.5rem] mr-[1rem] text-white ${homes.energylabel}`}>{homes.energylabel}</span>
                                 <span className="ml-[0.5rem]">{homes.rooms} værelser • {homes.livingspace} m²</span>
                                 <div className="flex justify-end ml-auto">
-                                <span className="font-semibold text-[1.3rem]">Kr. {homes.payment}</span>
+                                <span className="font-semibold text-[1.3rem]">Kr. {homes.payment.toLocaleString()}</span>
                                 </div>
                             </div>
                             </div>
                     </div>
+                </Link>
                 ))}
-            </div>
+                </div>
                 <div className="flex justify-center mt-[4rem]">
                     <Link href="HousesForSale" className="bg-[#162A41] text-white py-[1rem] px-[1.8rem] hover:text-orange-400">Se alle boliger</Link>
                 </div>

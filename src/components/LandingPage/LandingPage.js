@@ -6,13 +6,17 @@ import handUnderHouse from "../../../public/images/hand-under-house.png"
 import pin from "../../../public/images/pin.png"
 import handUnderUser from "../../../public/images/hand-under-user.png"
 
-export default function LandingPage() {
+export default async function LandingPage() {
+    const meetAgents = await fetch(`https://dinmaegler.onrender.com/homes`)
+    const data = await meetAgents.json()
+
+    console.log("home", data)
     return (
         <main className="h-full">
             <div className="h-[44.5rem] justify-center flex flex-col items-center filter">
                 <h1 className="text-white text-[3rem] font-semibold text-outline mb-[2rem]">Søg efter din drømmebolig</h1>
                 <section className="bg-white w-[50%] h-[28%] p-[1.5rem]">
-                    <p className="font-semibold text-[1.2rem]"><span className="border-[#162A41] border-b-[5px] pb-2">Søg</span> blandt 158 boliger til salg i 74 butikker</p>
+                    <p className="font-semibold text-[1.2rem]"><span className="border-[#162A41] border-b-[5px] pb-2">Søg</span> blandt {data.length} boliger til salg i 74 butikker</p>
                     <form className="mt-[1.2rem] flex flex-col">
                         <label className="text-black mt-[0.7rem] text-[1.1rem]">Hvad skal din næste bolig indeholde?
                         <div className="flex items-center w-[100%]">
