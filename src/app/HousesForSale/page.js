@@ -17,8 +17,8 @@ export default function HousesForSale() {
     
     useEffect(() => {
         const loggedIn = getCookie("dm_userid")
-        const tokenFromCookies = getCookie("dm_token") // Ensure you're getting the token correctly from cookies
-        setToken(tokenFromCookies) // Set the token in state
+        const tokenFromCookies = getCookie("dm_token")
+        setToken(tokenFromCookies)
         handleFetch(loggedIn)
     }, [])
     
