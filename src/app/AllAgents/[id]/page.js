@@ -5,6 +5,7 @@ import search from "../../../../public/images/search-icon.png"
 import instagram from "../../../../public/svg/instagram.svg"
 import linkedin from "../../../../public/svg/linkedin.svg"
 import skype from "../../../../public/svg/skype.svg"
+import AgentContactForm from "@/components/AgentContactForm"
 
 export default async function AgentInfo({params}) {
     const {id} = params
@@ -50,28 +51,8 @@ export default async function AgentInfo({params}) {
             <section className="col-span-2 border-[1px] border-[#D3DEE8] rounded p-[1.5rem] mt-[1rem]">
                 <span className="text-[1.1rem] font-semibold">Kontakt {data.name}</span>
                 <div className="border-b-[4px] border-[#162A41] w-[3.4rem] my-[0.5rem]"></div>
-                    <form className="flex flex-col w-full">
-                        <div className="w-[100%] flex flex-row justify-between">
-                            <div className="flex flex-col w-[48%]">
-                                <label className="my-[0.5rem]" type="name">Navn</label>
-                                <input className="border-[1px] border-[#D3DEE8] w-full h-[3rem] rounded-[2px] p-[0.5rem]" type="text" placeholder="Indtast navn"/>
-                            </div>
-                        <div className="flex flex-col w-[48%]">
-                            <label className="my-[0.5rem]" type="email">Email</label>
-                            <input className="border-[1px] border-[#D3DEE8] w-full h-[3rem] rounded-[2px] p-[0.5rem]" type="email" placeholder="Indtast email"/>
-                        </div>
-                </div>
-                <div className="flex flex-col">
-                    <label className="my-[0.5rem]">Emne</label>
-                    <input className="border-[1px] border-[#D3DEE8] w-full h-[3rem] rounded-[2px] p-[0.5rem]" type="text" placeholder="Hvad drejer din henvendelse sig om?"/>
-                </div>
-            <div className="flex flex-col">
-                <label className="my-[0.5rem]">Besked</label>
-                <textarea className="border-[1px] border-[#D3DEE8] w-full h-[8rem] rounded-[2px] p-[0.5rem] resize-none" type="text" placeholder="Skriv din besked her.."></textarea>
-            </div>
-                <button type="submit" className="flex justify-center items-center bg-[#162A41] text-white rounded-[3px] h-[3.5rem] w-[10rem] mt-[1.5rem]">Send besked</button>
-            </form>
-        </section>
+            <AgentContactForm/>
+            </section>
         </article>
         <section className="flex flex-col w-[40%]">
             <aside className="bg-[#EEF7FF] p-[1rem] rounded-[2px] w-[100%] h-[9.5rem]">

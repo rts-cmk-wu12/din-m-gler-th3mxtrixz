@@ -3,7 +3,6 @@
 import Filter from "../../components/Filter"
 import { useEffect, useState } from "react"
 import Card from "../../components/Card"
-import Link from "next/link"
 import { getCookie } from "cookies-next"
 
 export default function HousesForSale() {
@@ -31,10 +30,12 @@ export default function HousesForSale() {
                 <h2 className="font-bold text-white text-[5rem]">Boliger til salg</h2>
             </div>
                 <Filter/>
-            <div className="grid grid-cols-2 grid-rows-2 gap-[2rem] place-items-center px-[23rem] mt-[4rem]">
-                {homes && homes.map((homes, index) => (
-                    <Card key={homes.id} homes={homes} index={index} token={token}/>
-                ))}
+                <div className="flex justify-center">
+                    <div className="grid grid-cols-2 gap-[2rem] place-items-center mt-[4rem] w-[61%]">
+                        {homes && homes.map((homes, index) => (
+                        <Card key={homes.id} homes={homes} index={index} token={token}/>
+                    ))}
+                </div>
             </div>
         </section>
     )

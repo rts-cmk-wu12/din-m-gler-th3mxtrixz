@@ -12,7 +12,7 @@ export default function FavoriteCard({items}){
     }
 
     return(
-        <section ref={myRef} className="flex justify-center w-[75rem] shadow-lg mt-[3rem] bg-white relative rounded border-[0.1rem] border-[#D5E0EA] p-6 items-center">
+        <section ref={myRef} className="flex justify-center w-[75rem] shadow-lg my-[1rem] bg-white relative rounded border-[0.1rem] border-[#D5E0EA] p-6 items-center">
                 <div className="flex w-full justify-between">
                     <div className="flex">
                         <img className="h-[8rem] w-[15rem] mr-10" src={items.images[0].url} />

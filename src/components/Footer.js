@@ -7,9 +7,25 @@ import sendEmail from "../../public/images/send-email.png"
 import address from "../../public/images/address.png"
 import { usePathname } from "next/navigation"
 import Link from "next/link"
+import { useEffect, useState } from "react"
+import { getCookie } from "cookies-next"
 
 export default function Footer() {
     const pathName = usePathname()
+
+    const [isLoggedIn, setIsLoggedIn] = useState()
+    useEffect(() => {
+        const loggedIn = getCookie("dm_userid")
+        setIsLoggedIn(loggedIn)
+    },[pathName])
+    
+    function handleLogOut(){
+        if (isLoggedIn) {
+            deleteCookie("dm_token")
+            deleteCookie("dm_userid")
+            redirect("/Login")
+        }
+    }
 
     return (
         <footer className="w-[100%]">
@@ -44,10 +60,14 @@ export default function Footer() {
                     <nav className="w-[50%] mt-[2.5rem] ml-[10%]">
                         <ul className="flex flex-col">
                             <li className="font-bold text-[1.5rem]">Quick Links</li>
-                            <Link href="/HousesForSale" className={` ${pathName === "/HousesForSale" ? "text-orange-400" : "black"} my-[1rem] hover:text-orange-400 text-[1.1rem]`}>Boliger til salg</Link>
-                            <Link href="/AllAgents" className={` ${pathName === "/AlleAgents" ? "text-orange-400" : "black"} hover:text-orange-400 text-[1.1rem]`}>Mæglere</Link>
+                            <li className="my-[1rem]">
+                                <Link href="/HousesForSale" className={` ${pathName === "/HousesForSale" ? "text-orange-400" : "black"} hover:text-orange-400 text-[1.1rem]`}>Boliger til salg</Link>
+                            </li>
+                            <li>
+                                <Link href="/AllAgents" className={` ${pathName === "/AlleAgents" ? "text-orange-400" : "black"} hover:text-orange-400 text-[1.1rem]`}>Mæglere</Link>
+                            </li>
                             <li className="text-[1.1rem] hover:text-orange-400 my-[1rem]">Kontakt os</li>
-                            <li className="text-[1.1rem] hover:text-orange-400">Log in / bliv bruger</li>
+                            <li>{isLoggedIn ? <button onClick={handleLogOut}>Log ud</button> : <Link href="/Login" className="hover:text-orange-400 text-[1.1rem]">Log ind / Bliv bruger</Link>}</li>
                         </ul>
                     </nav>
                 </section>

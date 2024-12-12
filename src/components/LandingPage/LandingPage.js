@@ -5,6 +5,7 @@ import home from "../../../public/images/home.png"
 import handUnderHouse from "../../../public/images/hand-under-house.png"
 import pin from "../../../public/images/pin.png"
 import handUnderUser from "../../../public/images/hand-under-user.png"
+import Search from "@/app/Search/page"
 
 export default async function LandingPage() {
     const meetAgents = await fetch(`https://dinmaegler.onrender.com/homes`)
