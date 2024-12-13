@@ -1,10 +1,12 @@
+import Link from "next/link";
+
 export default function Register() {
     return (
                 <section>
             <div className="banner2 flex justify-center items-center flex-col text-white">
                 <h2 className="font-semibold text-[1.5rem]">Account Register</h2>
                 <div className="flex flex-row justify-between w-[5%] mt-[1rem]">
-                    <a href="/" className="hover:text-orange-400">Home</a>
+                    <Link href="/" className="hover:text-orange-400">Home</Link>
                     <span>|</span>
                     <a href="/LogIn" className="hover:text-orange-400">Login</a>
                 </div>

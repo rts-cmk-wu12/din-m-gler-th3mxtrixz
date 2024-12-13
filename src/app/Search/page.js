@@ -33,7 +33,7 @@ export default function Search() {
                             <Card key={home.id} homes={home} index={index} token={token?.value}/>
                         ))
                     ) : (
-                        <p>Ingen resultater fundet for din søgning: "{results}"</p>
+                        <p>Ingen resultater fundet for din søgning</p>
                     )}
                 </div>
             </div>

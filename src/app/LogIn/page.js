@@ -1,6 +1,7 @@
 "use client"
 
 import login from "@/actions/login"
+import Link from "next/link"
 import { redirect } from "next/navigation"
 import { useActionState, useEffect } from "react"
 
@@ -18,7 +19,7 @@ export default function LogIn() {
             <div className="banner2 flex justify-center items-center flex-col text-white">
                 <h2 className="font-semibold text-[1.5rem]">Account Login</h2>
                 <div className="flex flex-row justify-between w-[5%] mt-[1rem]">
-                    <a href="/" className="hover:text-orange-400">Home</a>
+                    <Link href="/" className="hover:text-orange-400">Home</Link>
                     <span>|</span>
                     <h3 className="hover:text-orange-400">Login</h3>
                 </div>
