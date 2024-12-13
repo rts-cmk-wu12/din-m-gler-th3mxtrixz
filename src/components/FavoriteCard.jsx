@@ -6,7 +6,7 @@ import { useRef } from "react"
 export default function FavoriteCard({items}){
     const myRef = useRef()
 
-    function handleRemoveFavorite (){
+    function handleRemoveFavorite() {
         put(items.id)
         myRef.current.remove()
     }

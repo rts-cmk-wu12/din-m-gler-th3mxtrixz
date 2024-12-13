@@ -2,8 +2,8 @@ import Link from "next/link";
 
 export default function Error() {
     return (
-    <main className="flex flex-col items-center justify-center h-[80vh] bg-blue-100 text-center">
-        <h2 className="text-[10rem] font-bold relative z-[10] text-white">Hov!
+    <main className="flex flex-col items-center justify-center h-[60vh] bg-blue-100 text-center">
+        <h2 className="text-[10rem] font-bold relative z-[10] text-white stroke">Hov!
             <div className="absolute inset-0 top-[9rem] h-[5rem] bg-[#162A41] -z-10"></div>
         </h2>
             <p className="text-[1.5rem] font-semibold mt-4">Du er havnet på en side som ikke findes!</p>
