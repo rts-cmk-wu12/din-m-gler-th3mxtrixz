@@ -25,7 +25,7 @@ export default function Houses() {
             <p className="mt-[1rem] text-[1.1rem]">There are many variations of passages of Lorem Ipsum available but the this in<br/> majority have suffered alteration in some</p>
             </div>
             <div className="flex justify-center">
-            <div className="grid grid-cols-2 gap-[2rem] place-items-center mt-[4rem] w-[60%]">
+            <div className="grid grid-cols-2 gap-[2rem] place-items-center mt-[4rem] w-[80%]">
                 {homes.map((homes, index) => (
                     <Link key={index} href={`/HouseInfo/${homes.id}`}>
                     <div className="bg-white rounded-b-[3px] w-[35rem]">

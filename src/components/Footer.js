@@ -66,7 +66,9 @@ export default function Footer() {
                             <li>
                                 <Link href="/AllAgents" className={` ${pathName === "/AlleAgents" ? "text-orange-400" : "black"} hover:text-orange-400 text-[1.1rem]`}>Mæglere</Link>
                             </li>
-                            <li className="text-[1.1rem] hover:text-orange-400 my-[1rem]">Kontakt os</li>
+                            <li className="my-[1rem]">
+                                <Link href="/Error" className={` ${pathName === "/Error" ? "text-orange-400" : "black"} hover:text-orange-400 text-[1.1rem]`}>Kontakt os</Link>
+                            </li>
                             <li>{isLoggedIn ? <button onClick={handleLogOut}>Log ud</button> : <Link href="/Login" className="hover:text-orange-400 text-[1.1rem]">Log ind / Bliv bruger</Link>}</li>
                         </ul>
                     </nav>

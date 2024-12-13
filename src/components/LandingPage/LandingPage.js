@@ -18,10 +18,10 @@ export default async function LandingPage() {
                 <h1 className="text-white text-[3rem] font-semibold text-outline mb-[2rem]">Søg efter din drømmebolig</h1>
                 <section className="bg-white w-[50%] h-[28%] p-[1.5rem]">
                     <p className="font-semibold text-[1.2rem]"><span className="border-[#162A41] border-b-[5px] pb-2">Søg</span> blandt {data.length} boliger til salg i 74 butikker</p>
-                    <form className="mt-[1.2rem] flex flex-col">
+                    <form className="mt-[1.2rem] flex flex-col" action="/Search" method="get">
                         <label className="text-black mt-[0.7rem] text-[1.1rem]">Hvad skal din næste bolig indeholde?
                         <div className="flex items-center w-[100%]">
-                            <input type="text" className="p-[0.5rem] border-[#F3F1F1] border-[1.5px] py-[0.8rem] w-[90%] mr-[0.5rem]" placeholder="Søg på fx. glaskeramisk komfur, bryggers, kælder eller lignende"/>
+                            <input type="search" name="results" className="p-[0.5rem] border-[#F3F1F1] border-[1.5px] py-[0.8rem] w-[90%] mr-[0.5rem]" placeholder="Søg på fx. glaskeramisk komfur, bryggers, kælder eller lignende"/>
                             <button className="px-[2.5rem] py-[0.9rem] bg-[#162A41] text-white rounded-[3px]">Søg</button>
                         </div>
                         </label>
@@ -36,7 +36,7 @@ export default async function LandingPage() {
                         <h3 className="text-[#263048] text-[1.5rem] font-semibold mb-[0.8rem]">Det synes vi siger noget om os!</h3>
                         <p className="text-[#263048] mb-[0.8rem] w-[80%]">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has normal distribution.</p>
                         <p className="text-[#263048] w-[80%]">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
-                    <div className="flex items-center mt-[3rem] justify-between w-[70%]">
+                    <div className="flex items-center mt-[3rem] justify-between w-[80%]">
                         <div className="flex items-center">
                             <div className="bg-[#EEF7FF] h-[4rem] w-[4rem] flex items-center justify-center">
                                 <Image src={handOverHouse} alt="hand over house icon" />

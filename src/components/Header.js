@@ -57,7 +57,7 @@ export default function Header() {
                     <Link href="/HousesForSale" className={` ${pathName === "/HousesForSale" ? "text-orange-400" : "black"} mr-8 hover:text-orange-400 text-[1.1rem]`}>Boliger til salg</Link>
                     <Link href="/AllAgents" className={` ${pathName === "/AllAgents" ? "text-orange-400" : "black"} mr-8 hover:text-orange-400 text-[1.1rem]`}>Mæglere</Link>
                     <Link href="/Favorite" className={` ${pathName === "/Favorite" ? "text-orange-400" : "black"} mr-8 hover:text-orange-400 text-[1.1rem]`}>Mine favoritter</Link>
-                    <a className="hover:text-orange-400 text-[1.1rem]">Kontakt os</a>
+                    <Link href="/Error" className={` ${pathName === "/Error" ? "text-orange-400" : "black"} mr-8 hover:text-orange-400 text-[1.1rem]`}>Kontakt os</Link>
                 </nav>
             </div>
         </header>

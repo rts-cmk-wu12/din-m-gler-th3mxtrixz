@@ -2,6 +2,11 @@ import horizon from "../../../../public/images/horizon.svg"
 import stack from "../../../../public/images/stack.svg"
 import addressPin from "../../../../public/images/address-pin.svg"
 import likeHeart from "../../../../public/images/like-heart.svg"
+import instagram from "../../../../public/svg/instagram.svg"
+import linkedin from "../../../../public/svg/linkedin.svg"
+import skype from "../../../../public/svg/skype.svg"
+import agentPhone from "../../../../public/svg/agent-phone.svg"
+import agentPaperPlane from "../../../../public/svg/agent-paper-plane.svg"
 import Image from "next/image"
 
 export default async function HouseInfo({params}) {
@@ -12,7 +17,7 @@ export default async function HouseInfo({params}) {
     console.log("house info", data)
 
     return (
-        <main className="flex flex-col justify-center items-center">
+        <main className="flex flex-col justify-center items-center mb-[10rem]">
             <img className="w-full h-[45rem] object-cover" src={data.images[0].url}alt="house image"/>
             <div className="flex items-center justify-center my-[1rem]">
                 <div className="border-b-[0.01rem] border-[#D3DEE8] w-[75rem] flex justify-between items-center pb-5 mt-8 text-[#162A41]">
@@ -89,6 +94,40 @@ export default async function HouseInfo({params}) {
                     </div>
                 </div>
                 </div>
+                <section className="w-[79%] flex justify-items-center mt-[3rem]">
+                    <div className="w-[60%] mr-[3rem]">
+                        <h3 className="font-semibold text-[1.4rem] mb-[1rem]">Beskrivelse</h3>
+                        <p className="w-[100%]">{data.description}</p>
+                    </div>
+                    <div className="w-[80%]">
+                        <h3 className="font-semibold text-[1.4rem] mb-[1rem]">Ansvarlige mægler</h3>
+                        <div>
+                        <article className="border-[#D3DEE8] border-[1.95px] flex p-[2rem] w-full">
+                            <img className="w-[15rem] h-[15rem] object-cover" src={data.agent.image.url}/>
+                            <nav className="bg-[#162A41] h-[5%] w-[8%] flex flex-row p-[0.6rem] absolute top-[89rem]">
+                                <Image className="w-[25rem]" src={instagram} height={20} width={20} alt="agents social medias"/>
+                                <Image className="w-[25rem]" src={linkedin} height={20} width={20} alt="agents social medias"/>
+                                <Image className="w-[25rem]" src={skype} height={20} width={20} alt="agents social medias"/>
+                            </nav>
+                            <div className="w-[50%] ml-[1rem]">
+                                <h2 className="font-semibold text-[1.3rem]">{data.agent.name}</h2>
+                                <p className="text-[#7B7B7B]">{data.agent.title}</p>
+                            <div className="border-b-[2px] border-[#D3DEE8] w-[3rem] my-[1rem]"></div>
+                            <address className="not-italic">
+                                <div className="flex items-center">
+                                    <Image className="mr-[0.5rem]" src={agentPhone} height={20} width={20} alt="Agent's phone number"/>
+                                    <a className="hover:text-orange-400" href="tel:+4570704000">{data.agent.phone}</a>
+                                </div>
+                                <div className="flex items-center mt-[0.8rem]">
+                                    <Image className="mr-[0.5rem]" src={agentPaperPlane} height={20} width={20} alt="Agent's email address"/>
+                                    <a className="hover:text-orange-400" href="mailto:4000@dinmaegler.com">{data.agent.email}</a>
+                                </div>
+                            </address>
+                            </div>
+                        </article>
+                        </div>
+                    </div>
+                </section>
         </main>
     )
 }
